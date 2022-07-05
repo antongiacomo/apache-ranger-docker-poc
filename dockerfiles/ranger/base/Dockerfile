@@ -23,8 +23,8 @@ RUN cd /opt \
     && git clone --depth 1 --branch release-ranger-$RANGER_VERSION https://github.com/apache/ranger.git \
     && cd ranger \
     && $MAVEN_HOME/apache-maven-$MAVEN_VERSION/bin/mvn -T 10 -DskipTests clean compile package install assembly:assembly \
-    && wget -O plugin-sampleapp.xml https://raw.githubusercontent.com/apache/ranger/2144cb738000ddc9086cb0ab5db5fcc42e337a2c/ranger-examples/distro/src/main/assembly/plugin-sampleapp.xml \
-    && wget -O plugin-sampleapp.xml https://raw.githubusercontent.com/apache/ranger/2144cb738000ddc9086cb0ab5db5fcc42e337a2c/ranger-examples/distro/src/main/assembly/sampleapp.xml \
+    #&& wget -O plugin-sampleapp.xml https://raw.githubusercontent.com/apache/ranger/2144cb738000ddc9086cb0ab5db5fcc42e337a2c/ranger-examples/distro/src/main/assembly/plugin-sampleapp.xml \
+    #&& wget -O plugin-sampleapp.xml https://raw.githubusercontent.com/apache/ranger/2144cb738000ddc9086cb0ab5db5fcc42e337a2c/ranger-examples/distro/src/main/assembly/sampleapp.xml \
 
     && rm -rf ~/.m2 \
     && ls | grep -v target | xargs rm -rf \
